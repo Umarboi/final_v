@@ -1,0 +1,344 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  animation: fadeIn 2s ease-in-out;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: #0c0505;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+  height: 40px;
+  margin-right: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #130b0b;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #ff6347;
+}
+
+.content {
+  padding-top: 70px; /* Adjust this value as needed to create space for the fixed navbar */
+}
+
+.search-section {
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  width: 80%;
+}
+
+#symptomInput {
+  width: 500%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#symptomInput:focus {
+  outline: none;
+  border-color: #ff6347;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-button:hover {
+  background-color: #e05135;
+}
+
+
+.fever-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust as needed */
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.fever-input-container {
+  background-color: #f0f0f0; /* Container background color */
+  border: 1px solid #ddd; /* Container border */
+  border-radius: 5px; /* Container border radius */
+  padding: 10px; /* Container padding */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Container box shadow */
+}
+
+.fever-input-container label {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #000000; /* Adjust the color to ensure better visibility */
+  font-weight: bold; /* Make the label bold for better emphasis */
+}
+
+.fever-input-container input[type="number"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+  width: 200px; /* Adjust width as needed */
+  outline: none; /* Remove default input focus outline */
+}
+
+.fever-input-container input[type="number"]:focus {
+  border-color: #ff6347; /* Border color on focus */
+}
+
+.symptoms-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  text-align: center; 
+}
+
+.symptoms-container label {
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  text-align: center;
+  width: calc(33.333% - 20px);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.symptoms-container label:hover {
+  background-color: #e0e0e0;
+}
+
+
+
+.get-test-button {
+  padding: 20px 0px;
+  text-align: center;
+  position:relative;
+  overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.get-test-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 1px;
+  background-color: #080404;
+  transform: scaleY(0.5);
+}
+
+.get-test-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #47ff6f;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn {
+  background-color: white;
+  color: #000000;
+  border: 2px solid #050202;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: #ebebeb;
+  background-color: #38ec38;
+}
+
+.result-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-top: 20px;
+}
+
+.result-container {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: transparent;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.note {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+}
+
+
+footer {
+  background-color: transparent;
+  color: hsl(0, 41%, 3%);
+  padding: 30px 0px;
+  text-align: center;
+  position: relative;
+  overflow:hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 1px;
+  background-color: #dddddd;
+  transform: scaleY(0.5);
+}
+
+footer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff6347;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+
+}
+
+/* Scroll to top button */
+#upButton {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  background-color: #e05135;
+  color: #070606;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 21px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+#upButton:hover {
+  background-color: #6b5652;
+}
+
+
+

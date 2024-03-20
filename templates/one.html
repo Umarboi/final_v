@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/images/favicon2.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="../static/css/style2.css">
+    <title>Test Suggestion</title>
+
+    <style>
+        
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+    
+        .background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            animation: fadeIn 2s ease-in-out; 
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.8;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+<section class="background">
+    <img src="../static/images/background1.jpg" alt="Background Image">
+</section>
+
+<!-- ye apna Navbar he bacchi -->
+<section class="content">
+<header>
+    <nav>
+        <div class="logo">
+            <img src="../static/images/the.png" alt="Your Logo">
+        </div>
+                
+        <ul class="nav-links">
+            <li><a href="../templates/index.html">Home</a></li>
+            <li><a href="/#team">Team</a></li>
+            <li><a href="/#blog">Blog</a></li>
+        </ul>
+</header>
+
+<section class="search-section">
+    <div class="search-container">
+        <input type="text" id="symptomInput" placeholder="Type your symptoms...">
+        <button class="search-button" onclick="searchSymptoms()">Search</button>
+    </div>
+</section>
+
+
+<section class="fever-container">
+        <div class="fever-input-container">
+            <label for="fever">Fever Reading:</label>
+            <input type="number" id="fever" name="fever" step="0.1" placeholder="Enter fever reading">
+        </div>
+
+</section>
+
+
+<section class="symptoms-container">
+    <div id="symptomsList">
+            <label><input type="checkbox" value="Urge to Urinate at Night"> Urge to Urinate at Night</label>
+            <label><input type="checkbox" value="Craving Sweet Items"> Craving Sweet Items</label>
+            <label><input type="checkbox" value="Weight Loss"> Weight Loss</label>
+            <label><input type="checkbox" value="Chills"> Chills</label>
+            <label><input type="checkbox" value="Chills"> Chills</label>
+            <label><input type="checkbox" value="Bleeding Tendencies"> Bleeding Tendencies</label>
+            <label><input type="checkbox" value="Dizziness"> Dizziness</label>
+            <label><input type="checkbox" value="Exhaustion"> Exhaustion</label>
+            <label><input type="checkbox" value="Body Pain"> Body Pain</label>
+            <label><input type="checkbox" value="Joint Pain"> Joint Pain</label>
+            <label><input type="checkbox" value="Yellowing of Skin"> Yellowing of Skin</label>
+            <label><input type="checkbox" value="Yellowing of Sclera"> Yellowing of Sclera</label>
+            <label><input type="checkbox" value="Anorexia"> Anorexia</label>
+            <label><input type="checkbox" value="Indigestion"> Indigestion</label>
+            <label><input type="checkbox" value="Nausea"> Nausea</label>
+            <label><input type="checkbox" value="Clay-Colored Stool"> Clay-Colored Stool</label>
+            <label><input type="checkbox" value="Numbness"> Numbness</label>
+            <label><input type="checkbox" value="Chest Pain"> Chest Pain</label>
+            <label><input type="checkbox" value="Heart Attack"> Heart Attack</label>
+            <label><input type="checkbox" value="Anxiety"> Anxiety</label>
+            <label><input type="checkbox" value="Intense Sweating"> Intense Sweating</label>
+            <label><input type="checkbox" value="Dysphagia"> Dysphagia</label>
+            <label><input type="checkbox" value="Redness of Sclera"> Redness of Sclera</label>
+            <label><input type="checkbox" value="Edema"> Edema</label>
+            <label><input type="checkbox" value="Fatigue"> Fatigue</label>
+            <label><input type="checkbox" value="Barfing"> Barfing</label>
+            <label><input type="checkbox" value="Constipation"> Constipation</label>
+            <label><input type="checkbox" value="Watery Stools"> Watery Stools</label>
+            <label><input type="checkbox" value="Dyspnea"> Dyspnea</label>
+            <label><input type="checkbox" value="Emesis"> Emesis</label>
+            <label><input type="checkbox" value="Weight Gain"> Weight Gain</label>
+            <label><input type="checkbox" value="Abdominal Pain"> Abdominal Pain</label>
+            <label><input type="checkbox" value="Pain that radiates to the lower abdomen and groin"> Pain that radiates to the lower abdomen and groin</label>
+            <label><input type="checkbox" value="Pain or burning sensation while urinating"> Pain or burning sensation while urinating</label>
+            <label><input type="checkbox" value="Hairfall"> Hairfall</label>
+            <label><input type="checkbox" value="Brittle Teeth"> Brittle Teeth</label>
+            <label><input type="checkbox" value="Knocking Sound from Joints"> Knocking Sound from Joints</label>
+            <label><input type="checkbox" value="Swollen Joints"> Swollen Joints</label>
+            <label><input type="checkbox" value="Headaches"> Headaches</label>
+            <label><input type="checkbox" value="Stuffy Nose"> Stuffy Nose</label>
+            <label><input type="checkbox" value="Constant Cold"> Constant Cold</label>
+            <label><input type="checkbox" value="Difficult Falling Asleep at Night"> Difficult Falling Asleep at Night</label>
+            <label><input type="checkbox" value="Blood in Stools"> Blood in Stools</label>
+    
+    
+    
+
+        <div class="get-test-button center">
+            <button class="btn" onclick="getTest()">Get Test</button>
+        </div>
+
+<!--ye he hamara final result ka section -->
+<div class="result-wrapper">
+    <div class="result-container" style="display: block;">
+        <div class="test-suggestion-container">
+            <h3 id="predictDiseseae">Predicted illness: </h3>
+            <h3 id="testSuggestion">Suggested Tests: </h3>
+            <div class="note"><img src="../static/images/test-img2.png"> It is always the best option to consult a doctor for a professional medical opinion.</div>
+        </div>
+    </div>
+</div>
+
+  
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-copyright">
+                <p>&copy; <b>2024 UmarShlokNaved.</b> All rights reserved.</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="upButton" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+        
+    </button>
+
+
+    
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="../static/js/script.js"></script> 
+</body> 
